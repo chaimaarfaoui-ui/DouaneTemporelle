@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_steam" android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/iv_logo_ca"
+            android:layout_width="220dp" android:layout_height="150dp"
+            android:layout_marginTop="4dp" android:scaleType="fitCenter"
+            android:src="@drawable/img_machine_logo"/>
+
+        <FrameLayout
+            android:layout_width="170dp" android:layout_height="120dp"
+            android:visibility="gone"
+            android:layout_marginTop="12dp">
+            <ImageView
+                android:id="@+id/iv_engrenage1_ca"
+                android:layout_width="105dp" android:layout_height="105dp"
+                android:layout_gravity="start|top"
+                android:src="@drawable/ic_gear"/>
+            <ImageView
+                android:id="@+id/iv_engrenage2_ca"
+                android:layout_width="68dp" android:layout_height="68dp"
+                android:layout_gravity="end|bottom"
+                android:src="@drawable/ic_gear"/>
+        </FrameLayout>
+
+        <TextView android:fontFamily="serif"
+            android:id="@+id/tv_titre_ca"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="DOUANE TEMPORELLE"
+            android:textSize="27sp" android:textStyle="bold"
+            android:textColor="#E3B65A" android:letterSpacing="0.1"
+            android:shadowColor="#000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="3"
+            android:gravity="center" android:layout_marginTop="10dp"/>
+
+        <TextView android:fontFamily="serif"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="~ Bureau d'enregistrement des voyageurs du temps ~"
+            android:textSize="13sp" android:textStyle="italic" android:textColor="#D9C79A"
+            android:gravity="center" android:layout_marginBottom="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="18dp"
+            android:background="@drawable/bg_card">
+
+            <EditText android:fontFamily="serif"
+                android:id="@+id/et_nom_ca"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="Nom du voyageur" android:inputType="textPersonName"
+                android:background="@drawable/bg_field" android:padding="14dp"
+                android:textColor="#3B2414" android:textColorHint="#9C7A52"/>
+
+            <EditText android:fontFamily="serif"
+                android:id="@+id/et_naissance_ca"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Année de naissance (ex: 1990)" android:inputType="number"
+                android:maxLength="4"
+                android:background="@drawable/bg_field" android:padding="14dp"
+                android:textColor="#3B2414" android:textColorHint="#9C7A52"/>
+
+            <EditText android:fontFamily="serif"
+                android:id="@+id/et_destination_ca"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Année de destination (ex: 2050) ou faites défiler" android:inputType="number"
+                android:maxLength="4"
+                android:background="@drawable/bg_field" android:padding="14dp"
+                android:textColor="#3B2414" android:textColorHint="#9C7A52"/>
+
+            <TextView android:fontFamily="serif"
+                android:id="@+id/tv_machine_titre_ca"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Machine à voyager dans le temps" android:layout_marginTop="16dp"
+                android:textStyle="bold" android:textColor="#6B4412"/>
+
+            <FrameLayout
+                android:layout_width="match_parent" android:layout_height="180dp"
+                android:layout_marginTop="6dp" android:background="#2B1810">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_annees_ca"
+                    android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:clipToPadding="false" android:overScrollMode="never"/>
+
+                <View
+                    android:layout_width="match_parent" android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_cadre_annee"/>
+            </FrameLayout>
+
+            <TextView android:fontFamily="serif"
+                android:id="@+id/tv_motif_ca"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Motif du voyage" android:layout_marginTop="16dp"
+                android:textStyle="bold" android:textColor="#6B4412"/>
+
+            <Spinner
+                android:id="@+id/sp_motif_ca"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_field"
+                android:popupBackground="#F1E2BC"/>
+
+            <Button android:fontFamily="serif"
+                android:id="@+id/btn_inspecter_ca"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:layout_marginTop="22dp" android:text="Inspecter le profil"
+                android:background="@drawable/bg_button" android:stateListAnimator="@null"
+                android:textColor="#2B1810" android:textStyle="bold" android:textSize="16sp"/>
+        </LinearLayout>
+
+        <TextView android:fontFamily="serif"
+            android:id="@+id/tv_historique_titre_ca"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="24dp" android:text="REGISTRE DES VOYAGEURS"
+            android:textStyle="bold" android:textColor="#E3B65A"
+            android:letterSpacing="0.1"/>
+
+        <TextView android:fontFamily="serif"
+            android:id="@+id/tv_historique_ca"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:layout_marginBottom="16dp"
+            android:padding="14dp" android:background="@drawable/bg_card"
+            android:textColor="#3B2414" android:lineSpacingExtra="4dp"/>
+    </LinearLayout>
+</ScrollView>
