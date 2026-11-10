@@ -30,16 +30,16 @@ public class VerificationActivity extends Activity {
         // العمر الزمني = سنة الوجهة - سنة الميلاد
         int ageTemporel = destination - naissance;
 
-        ((TextView) findViewById(R.id.tv_nom_ca)).setText("Traveler: " + nom);
-        ((TextView) findViewById(R.id.tv_age_ca)).setText("Temporal age: " + ageTemporel + " yrs");
-        ((TextView) findViewById(R.id.tv_annees_ca)).setText("Timeline: " + naissance + " ➜ " + destination);
-        ((TextView) findViewById(R.id.tv_dest_ca)).setText("Destination year: " + destination);
-        ((TextView) findViewById(R.id.tv_motif_ca)).setText("Reason: " + motif);
+        ((TextView) findViewById(R.id.tv_nom_ca)).setText("Nom : " + nom);
+        ((TextView) findViewById(R.id.tv_age_ca)).setText("Âge temporel : " + ageTemporel + " ans");
+        ((TextView) findViewById(R.id.tv_annees_ca)).setText("Trajet : " + naissance + " ➜ " + destination);
+        ((TextView) findViewById(R.id.tv_dest_ca)).setText("Année de destination : " + destination);
+        ((TextView) findViewById(R.id.tv_motif_ca)).setText("Motif : " + motif);
 
         // رقم تفتيش مشتق من البيانات (لمسة جمالية)
         int numero = Math.abs((nom + naissance + destination).hashCode()) % 10000;
         ((TextView) findViewById(R.id.tv_numero_ca))
-                .setText(String.format("INSPECTION No. %04d · TIMELINE C-137", numero));
+                .setText(String.format("INSPECTION No. %04d", numero));
 
         // درجة خطر المفارقة (0 إلى 100) حسب السبب وحجم القفزة
         int risque = calculerRisque(motif, ageTemporel);

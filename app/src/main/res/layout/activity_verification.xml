@@ -37,18 +37,18 @@
 
         <Button
             android:id="@+id/btn_refuser_ca"
-            android:layout_width="match_parent" android:layout_height="52dp"
+            android:layout_width="match_parent" android:layout_height="58dp"
             android:layout_alignParentBottom="true" android:layout_marginBottom="4dp"
-            android:fontFamily="casual" android:text="⚠ REJECT — PARADOX RISK"
+            android:fontFamily="casual" android:text="⚠ REFUSER (RISQUE DE PARADOXE)"
             android:background="@drawable/bg_button_refuse" android:stateListAnimator="@null"
             android:textColor="@color/cream" android:textStyle="bold"
-            android:textAllCaps="false" android:textSize="13sp"/>
+            android:textAllCaps="false" android:textSize="12sp"/>
 
         <Button
             android:id="@+id/btn_approuver_ca"
-            android:layout_width="match_parent" android:layout_height="52dp"
+            android:layout_width="match_parent" android:layout_height="58dp"
             android:layout_above="@id/btn_refuser_ca" android:layout_marginBottom="6dp"
-            android:fontFamily="casual" android:text="★ APPROVE TIME JUMP"
+            android:fontFamily="casual" android:text="★ APPROUVER LE SAUT TEMPOREL"
             android:background="@drawable/bg_button_approve" android:stateListAnimator="@null"
             android:textColor="@color/cream" android:textStyle="bold"
             android:textAllCaps="false" android:textSize="13sp"/>
