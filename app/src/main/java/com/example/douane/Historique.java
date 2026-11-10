@@ -12,7 +12,7 @@ public class Historique {
 
     // إرجاع آخر 5 مسافرين كنص
     public static String dernier() {
-        if (entrees.isEmpty()) return "Aucun voyageur pour le moment";
+        if (entrees.isEmpty()) return "No travelers yet — be the first!";
         StringBuilder sb = new StringBuilder();
         int debut = Math.max(0, entrees.size() - 5);
         for (int i = entrees.size() - 1; i >= debut; i--) {

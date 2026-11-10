@@ -1,91 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- القيد الإجباري: الجذر LinearLayout أفقي: صورة بوزن 0.3 و RelativeLayout بوزن 0.7 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_verif_ca"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="horizontal"
     android:weightSum="1"
-    android:padding="14dp"
-    android:background="@drawable/bg_steam">
+    android:padding="12dp"
+    android:background="@drawable/bg_night">
 
     <ImageView
         android:id="@+id/img_passeport_ca"
         android:layout_width="0dp" android:layout_height="match_parent"
         android:layout_weight="0.3"
-        android:scaleType="centerInside"
-        android:src="@drawable/img_astronaute"/>
+        android:scaleType="fitCenter"
+        android:src="@drawable/art_officer"/>
 
     <RelativeLayout
+        android:id="@+id/rl_dossier_ca"
         android:layout_width="0dp" android:layout_height="match_parent"
         android:layout_weight="0.7"
-        android:background="@drawable/bg_billet"
-        android:padding="16dp">
+        android:background="@drawable/bg_passport"
+        android:padding="18dp">
 
-        <TextView android:fontFamily="serif"
+        <TextView
             android:id="@+id/tv_entete_ca"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="PASSEPORT TEMPOREL"
-            android:textSize="18sp" android:textStyle="bold"
-            android:textColor="#6B4412" android:letterSpacing="0.08"
-            android:layout_alignParentTop="true"/>
-
-        <TextView android:fontFamily="serif"
-            android:id="@+id/tv_nom_ca"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_below="@id/tv_entete_ca"
-            android:layout_marginTop="16dp" android:textSize="16sp"
-            android:textColor="#3B2414"/>
-
-        <TextView android:fontFamily="serif"
-            android:id="@+id/tv_age_ca"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_below="@id/tv_nom_ca"
-            android:layout_marginTop="8dp" android:textSize="16sp"
-            android:textColor="#3B2414"/>
-
-        <TextView android:fontFamily="serif"
-            android:id="@+id/tv_annees_ca"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_below="@id/tv_age_ca"
-            android:layout_marginTop="8dp" android:textSize="16sp"
-            android:textColor="#3B2414"/>
-
-        <TextView android:fontFamily="serif"
-            android:id="@+id/tv_motif_ca"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_below="@id/tv_annees_ca"
-            android:layout_marginTop="8dp" android:textSize="16sp"
-            android:textColor="#3B2414"/>
-
-        <TextView android:fontFamily="serif"
-            android:id="@+id/tv_risque_ca"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_below="@id/tv_motif_ca"
-            android:layout_marginTop="14dp" android:textSize="15sp"
-            android:textColor="#8B1A1A" android:textStyle="bold"/>
-
-        <ProgressBar
-            android:id="@+id/pb_risque_ca"
-            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_below="@id/tv_risque_ca"
-            android:max="100"/>
+            android:layout_alignParentTop="true"
+            android:fontFamily="casual" android:text="TIME PASSPORT"
+            android:textSize="22sp" android:textStyle="bold" android:textColor="@color/teal"/>
 
-        <Button android:fontFamily="serif"
+        <TextView
+            android:id="@+id/tv_numero_ca"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_below="@id/tv_entete_ca"
+            android:fontFamily="serif-monospace" android:textSize="11sp" android:textColor="@color/ink"/>
+
+        <Button
             android:id="@+id/btn_refuser_ca"
-            android:layout_width="match_parent" android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
-            android:text="Refuser (Risque de paradoxe)"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:layout_alignParentBottom="true" android:layout_marginBottom="4dp"
+            android:fontFamily="casual" android:text="⚠ REJECT — PARADOX RISK"
             android:background="@drawable/bg_button_refuse" android:stateListAnimator="@null"
-            android:textColor="#8B1A1A" android:textStyle="bold"
+            android:textColor="@color/cream" android:textStyle="bold"
             android:textAllCaps="false" android:textSize="13sp"/>
 
-        <Button android:fontFamily="serif"
+        <Button
             android:id="@+id/btn_approuver_ca"
-            android:layout_width="match_parent" android:layout_height="50dp"
-            android:layout_above="@id/btn_refuser_ca"
-            android:layout_marginBottom="10dp"
-            android:text="Approuver le saut temporel"
-            android:background="@drawable/bg_button" android:stateListAnimator="@null"
-            android:textColor="#2B1810" android:textStyle="bold"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:layout_above="@id/btn_refuser_ca" android:layout_marginBottom="6dp"
+            android:fontFamily="casual" android:text="★ APPROVE TIME JUMP"
+            android:background="@drawable/bg_button_approve" android:stateListAnimator="@null"
+            android:textColor="@color/cream" android:textStyle="bold"
             android:textAllCaps="false" android:textSize="13sp"/>
+
+        <ScrollView
+            android:id="@+id/sv_dossier_ca"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:layout_below="@id/tv_numero_ca" android:layout_above="@id/btn_approuver_ca"
+            android:layout_marginTop="8dp" android:layout_marginBottom="6dp"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_classifie_ca"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:padding="6dp" android:rotation="-6"
+                    android:background="@drawable/bg_stamp_red"
+                    android:fontFamily="casual" android:text="CLASSIFIED ★ EYES ONLY"
+                    android:textSize="13sp" android:textStyle="bold" android:textColor="@color/red"/>
+
+                <TextView
+                    android:id="@+id/tv_nom_ca"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="serif-monospace" android:textSize="15sp" android:textStyle="bold"
+                    android:textColor="@color/ink"/>
+
+                <TextView
+                    android:id="@+id/tv_age_ca"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="serif-monospace" android:textSize="14sp" android:textColor="@color/ink"/>
+
+                <TextView
+                    android:id="@+id/tv_annees_ca"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="serif-monospace" android:textSize="14sp" android:textColor="@color/ink"/>
+
+                <TextView
+                    android:id="@+id/tv_dest_ca"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="serif-monospace" android:textSize="14sp" android:textColor="@color/ink"/>
+
+                <TextView
+                    android:id="@+id/tv_motif_ca"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="serif-monospace" android:textSize="14sp" android:textColor="@color/ink"/>
+
+                <TextView
+                    android:id="@+id/tv_risque_ca"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="casual" android:textSize="15sp" android:textStyle="bold"
+                    android:textColor="@color/red"/>
+
+                <ProgressBar
+                    android:id="@+id/pb_risque_ca"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:max="100"/>
+
+                <TextView
+                    android:id="@+id/tv_statut_ca"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" android:layout_marginBottom="8dp"
+                    android:padding="10dp" android:background="@drawable/bg_chip"
+                    android:fontFamily="casual" android:textStyle="bold" android:textSize="13sp"
+                    android:textColor="@color/ink"/>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- شريط الماسح الضوئي المتحرك -->
+        <View
+            android:id="@+id/v_scan_ca"
+            android:layout_width="match_parent" android:layout_height="46dp"
+            android:background="@drawable/bg_scan"/>
     </RelativeLayout>
 </LinearLayout>

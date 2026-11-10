@@ -11,6 +11,7 @@ import android.widget.Toast;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Gravity;
+import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -31,6 +32,10 @@ public class MainActivity extends Activity {
     private LinearLayoutManager lm;
     // علم لمنع الحلقة بين تمرير العجلة وتعديل خانة النص
     private boolean miseAJourInterne = false;
+    // آخر سنة وصلت إليها العجلة (لاهتزاز خفيف عند كل سنة)
+    private int derniereAnnee = -1;
+    // مجموعة الحركات المتكررة
+    private final Fx fx = new Fx();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +59,17 @@ public class MainActivity extends Activity {
 
         initialiserMachine();
 
-        // تدوير الترسين بشكل مستمر وفي اتجاهين متعاكسين (حركة جمالية)
-        animerEngrenage(findViewById(R.id.iv_engrenage1_ca), 360f, 20000);
-        animerEngrenage(findViewById(R.id.iv_engrenage2_ca), -360f, 12000);
+        // تدوير الترسين في اتجاهين متعاكسين وطفو آلة الزمن
+        fx.boucle(findViewById(R.id.iv_engrenage1_ca), "rotation", 0f, 360f, 9000, false);
+        fx.boucle(findViewById(R.id.iv_engrenage2_ca), "rotation", 0f, -360f, 6000, false);
+        fx.boucle(findViewById(R.id.iv_logo_ca), "translationY", 0f, -14f, 1600, true);
+    }
+
+    // إيقاف الحركات عند إغلاق الشاشة
+    @Override
+    protected void onDestroy() {
+        fx.arreter();
+        super.onDestroy();
     }
 
     // تهيئة عجلة السنوات التي تتحرك وتتوقف على السنة المطلوبة
@@ -81,6 +94,12 @@ public class MainActivity extends Activity {
             public void onScrolled(RecyclerView rv, int dx, int dy) {
                 // تكبير السنة الوسطى وتصغير البقية
                 effetProfondeur();
+                // اهتزاز خفيف كلما مرت سنة جديدة في الوسط
+                int a = anneeCentrale();
+                if (a > 0 && a != derniereAnnee) {
+                    derniereAnnee = a;
+                    rv.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK);
+                }
             }
 
             @Override
@@ -172,8 +191,8 @@ public class MainActivity extends Activity {
                     ViewGroup.LayoutParams.MATCH_PARENT, hauteur));
             t.setGravity(Gravity.CENTER);
             t.setTextSize(32);
-            t.setTypeface(android.graphics.Typeface.SERIF, android.graphics.Typeface.BOLD);
-            t.setTextColor(0xFFE3B65A);
+            t.setTypeface(android.graphics.Typeface.create("casual", android.graphics.Typeface.BOLD));
+            t.setTextColor(0xFFE8A93A);
             return new VH(t);
         }
 
@@ -211,7 +230,7 @@ public class MainActivity extends Activity {
 
         // التحقق من أن كل الحقول مملوءة
         if (nom.isEmpty() || naiss.length() != 4 || dest.length() != 4) {
-            Toast.makeText(this, "Veuillez remplir tous les champs (années à 4 chiffres)",
+            Toast.makeText(this, "Please fill every field (years need 4 digits)!",
                     Toast.LENGTH_SHORT).show();
             return;
         }
@@ -220,11 +239,11 @@ public class MainActivity extends Activity {
         int n = Integer.parseInt(naiss);
         int d = Integer.parseInt(dest);
         if (n < 1000 || n > 3000 || d < 1000 || d > 3000) {
-            etNaissance.setError("Année entre 1000 et 3000");
+            etNaissance.setError("Year must be between 1000 and 3000");
             return;
         }
         if (n == d) {
-            etDestination.setError("Destination identique à la naissance");
+            etDestination.setError("Destination can't be your birth year");
             return;
         }
 
@@ -235,5 +254,7 @@ public class MainActivity extends Activity {
         intent.putExtra(Cles.anneeDest(), Integer.parseInt(dest));
         intent.putExtra(Cles.motif(), spMotif.getSelectedItem().toString());
         startActivity(intent);
+        // انتقال على شكل بوابة زمنية
+        overridePendingTransition(R.anim.portal_in, R.anim.portal_out);
     }
 }

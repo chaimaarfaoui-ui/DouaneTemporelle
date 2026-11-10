@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView android:fontFamily="serif" xmlns:android="http://schemas.android.com/apk/res/android"
+<TextView android:fontFamily="serif-monospace" xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:padding="12dp" android:textColor="#3B2414" android:textSize="16sp"/>
+    android:padding="12dp" android:textColor="#2B1B12" android:textSize="16sp"/>

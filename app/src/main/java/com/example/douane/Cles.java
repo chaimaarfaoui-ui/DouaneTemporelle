@@ -3,7 +3,7 @@ package com.example.douane;
 // كلاس مساعد لبناء مفاتيح putExtra انطلاقا من رقم بطاقة الطالب
 public class Cles {
 
-    // آخر 4 أرقام من بطاقة الطالب (مؤقت: يجب تغييره بآخر 4 أرقام من بطاقة الطالب)
+    // آخر 4 أرقام من بطاقة الطالب
     public static final String MATRICULE = "1709";
 
     // دالة ثابتة تبني المفتاح: matricule + "_" + nom

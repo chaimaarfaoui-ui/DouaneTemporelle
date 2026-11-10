@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ink">#2B1B12</color>
+    <color name="cream">#F3E5C0</color>
+    <color name="paper">#FFF8E1</color>
+    <color name="teal">#2A7F8E</color>
+    <color name="red">#D9482B</color>
+    <color name="mustard">#E8A93A</color>
+    <color name="green">#2F6B4F</color>
+    <color name="navy">#1B2A49</color>
+    <color name="dusk">#5B8FB0</color>
+</resources>

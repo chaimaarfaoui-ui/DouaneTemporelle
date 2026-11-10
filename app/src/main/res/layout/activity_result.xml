@@ -3,53 +3,105 @@
     android:id="@+id/root_result_ca"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:fillViewport="true">
-<LinearLayout
-    android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:orientation="vertical" android:gravity="center" android:padding="24dp">
-
-    <ImageView
-        android:id="@+id/iv_photo_ca"
-        android:layout_width="180dp" android:layout_height="160dp"
-        android:scaleType="fitCenter" android:layout_marginBottom="12dp"/>
 
     <FrameLayout
-        android:id="@+id/fl_ticket_ca"
-        android:layout_width="300dp" android:layout_height="175dp"
-        android:layout_marginBottom="16dp">
+        android:id="@+id/fl_scene_ca"
+        android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <!-- بوابة زمنية تدور خلف الشخصية -->
         <ImageView
+            android:id="@+id/iv_spirale_ca"
+            android:layout_width="420dp" android:layout_height="420dp"
+            android:layout_gravity="center" android:alpha="0.4"
+            android:src="@drawable/art_spiral"/>
+
+        <com.example.douane.TwinkleView
+            android:id="@+id/tw_result_ca"
+            android:layout_width="match_parent" android:layout_height="match_parent"/>
+
+        <!-- وميض أحمر لسيارة شرطة الزمن عند الرفض -->
+        <View
+            android:id="@+id/v_sirene_ca"
             android:layout_width="match_parent" android:layout_height="match_parent"
-            android:scaleType="fitXY" android:src="@drawable/img_ticket"/>
-        <TextView android:fontFamily="serif"
-            android:id="@+id/tv_ticket_infos_ca"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_gravity="bottom|start"
-            android:layout_marginStart="26dp" android:layout_marginBottom="30dp"
-            android:textColor="#3B2414" android:textStyle="bold" android:textSize="14sp"/>
+            android:background="#66D9482B" android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical" android:gravity="center_horizontal" android:padding="20dp">
+
+            <View
+                android:id="@+id/v_ruban1_ca"
+                android:layout_width="match_parent" android:layout_height="18dp"
+                android:layout_marginStart="-20dp" android:layout_marginEnd="-20dp"
+                android:background="@drawable/bg_caution" android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_titre_verdict_ca"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="casual" android:textSize="34sp" android:textStyle="bold"
+                android:textColor="@color/mustard" android:gravity="center"
+                android:shadowColor="@color/ink" android:shadowDx="4" android:shadowDy="4" android:shadowRadius="1"/>
+
+            <ImageView
+                android:id="@+id/iv_photo_ca"
+                android:layout_width="230dp" android:layout_height="210dp"
+                android:scaleType="fitCenter" android:layout_marginTop="4dp"/>
+
+            <FrameLayout
+                android:id="@+id/fl_ticket_ca"
+                android:layout_width="300dp" android:layout_height="175dp"
+                android:layout_marginTop="2dp" android:layout_marginBottom="10dp">
+                <ImageView
+                    android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:scaleType="fitXY" android:src="@drawable/img_ticket"/>
+                <TextView
+                    android:id="@+id/tv_ticket_infos_ca"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="26dp" android:layout_marginBottom="30dp"
+                    android:fontFamily="serif-monospace" android:textColor="@color/ink"
+                    android:textStyle="bold" android:textSize="14sp"/>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_message_ca"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="casual" android:textSize="24sp" android:textStyle="bold"
+                android:textColor="@color/cream" android:gravity="center"
+                android:shadowColor="@color/ink" android:shadowDx="3" android:shadowDy="3" android:shadowRadius="1"/>
+
+            <TextView
+                android:id="@+id/tv_sous_ca"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="serif-monospace" android:textSize="13sp" android:textStyle="bold"
+                android:textColor="@color/cream" android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tv_tampon_ca"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" android:layout_marginBottom="16dp"
+                android:fontFamily="casual" android:textSize="32sp" android:textStyle="bold"
+                android:textColor="@color/cream" android:letterSpacing="0.1"
+                android:padding="16dp" android:rotation="-12"/>
+
+            <Button
+                android:id="@+id/btn_nouveau_ca"
+                android:layout_width="wrap_content" android:layout_height="60dp"
+                android:paddingStart="32dp" android:paddingEnd="32dp"
+                android:fontFamily="casual" android:text="NEW TRAVELER ➜"
+                android:background="@drawable/bg_button" android:stateListAnimator="@null"
+                android:textColor="@color/ink" android:textStyle="bold" android:textSize="18sp"/>
+
+            <View
+                android:id="@+id/v_ruban2_ca"
+                android:layout_width="match_parent" android:layout_height="18dp"
+                android:layout_marginStart="-20dp" android:layout_marginEnd="-20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_caution" android:visibility="gone"/>
+        </LinearLayout>
     </FrameLayout>
-
-    <TextView android:fontFamily="serif"
-        android:id="@+id/tv_message_ca"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:textSize="28sp" android:textStyle="bold"
-        android:textColor="#F1E2BC" android:gravity="center"
-        android:shadowColor="#000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="3"
-        android:layout_marginBottom="20dp"/>
-
-    <TextView android:fontFamily="serif"
-        android:id="@+id/tv_tampon_ca"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:textSize="34sp" android:textStyle="bold" android:textColor="#F1E2BC"
-        android:letterSpacing="0.1"
-        android:padding="16dp" android:rotation="-12"
-        android:background="@drawable/bg_stamp"
-        android:layout_marginBottom="24dp"/>
-
-    <Button android:fontFamily="serif"
-        android:id="@+id/btn_nouveau_ca"
-        android:layout_width="wrap_content" android:layout_height="56dp"
-        android:paddingStart="32dp" android:paddingEnd="32dp"
-        android:text="Nouveau voyageur"
-        android:background="@drawable/bg_button" android:stateListAnimator="@null"
-        android:textColor="#2B1810" android:textStyle="bold" android:textSize="16sp"/>
-</LinearLayout>
 </ScrollView>

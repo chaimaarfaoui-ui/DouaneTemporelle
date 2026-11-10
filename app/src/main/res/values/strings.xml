@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Douane Temporelle</string>
+    <string name="app_name">Time Travel Customs</string>
+    <!-- الأسباب الثلاثة تبقى كما في الأصل لأن الكود يقارن بها -->
     <string-array name="motifs">
         <item>Tourisme</item>
         <item>Modification du passé</item>
