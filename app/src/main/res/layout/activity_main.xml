@@ -139,7 +139,7 @@
                     android:id="@+id/btn_inspecter_ca"
                     android:layout_width="match_parent" android:layout_height="60dp"
                     android:layout_marginTop="22dp"
-                    android:fontFamily="casual" android:text="BEGIN INSPECTION ➜"
+                    android:fontFamily="casual" android:text="INSPECTER LE PROFIL ➜"
                     android:background="@drawable/bg_button" android:stateListAnimator="@null"
                     android:textColor="@color/ink" android:textStyle="bold" android:textSize="18sp"/>
             </LinearLayout>
