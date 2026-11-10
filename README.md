@@ -2,6 +2,10 @@
 
 # ⏳ TIME TRAVEL CUSTOMS ⏳
 ### *Douane Temporelle: the checkpoint where history gets inspected*
+## 👥 Team
+**Chaima Arfaoui** · **Farah Boukhatem**
+
+*FSEGT, 3ème BI, Programmation Mobile (Prof. Nidhal Jelassi)*
 
 ![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)
 ![Language](https://img.shields.io/badge/Language-Java-E8A93A)
@@ -176,7 +180,6 @@ Java · Android Views (XML) · RecyclerView + LinearSnapHelper · ObjectAnimator
 
 <div align="center">
 
-**Made for FSEGT 3ème BI · Programmation Mobile · 2026**
 *May your timeline stay paradox-free.* ⏳
 
 </div>
