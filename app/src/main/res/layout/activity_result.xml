@@ -60,7 +60,7 @@
                     android:id="@+id/tv_ticket_infos_ca"
                     android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:layout_gravity="bottom|start"
-                    android:layout_marginStart="26dp" android:layout_marginBottom="30dp"
+                    android:layout_marginStart="26dp" android:layout_marginBottom="12dp"
                     android:fontFamily="serif-monospace" android:textColor="@color/ink"
                     android:textStyle="bold" android:textSize="14sp"/>
             </FrameLayout>
@@ -83,7 +83,7 @@
             <TextView
                 android:id="@+id/tv_tampon_ca"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" android:layout_marginBottom="16dp"
+                android:layout_marginTop="36dp" android:layout_marginBottom="22dp"
                 android:fontFamily="casual" android:textSize="32sp" android:textStyle="bold"
                 android:textColor="@color/cream" android:letterSpacing="0.1"
                 android:padding="16dp" android:rotation="-12"/>
@@ -92,7 +92,7 @@
                 android:id="@+id/btn_nouveau_ca"
                 android:layout_width="wrap_content" android:layout_height="60dp"
                 android:paddingStart="32dp" android:paddingEnd="32dp"
-                android:fontFamily="casual" android:text="NEW TRAVELER ➜"
+                android:fontFamily="casual" android:text="NOUVEAU VOYAGEUR ➜"
                 android:background="@drawable/bg_button" android:stateListAnimator="@null"
                 android:textColor="@color/ink" android:textStyle="bold" android:textSize="18sp"/>
 
