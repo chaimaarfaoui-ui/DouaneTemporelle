@@ -1,3 +1,4 @@
+<img src="screenshots/banner.png" width="100%">
 <div align="center">
 
 # ⏳ TIME TRAVEL CUSTOMS ⏳
