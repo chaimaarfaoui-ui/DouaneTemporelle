@@ -5,6 +5,7 @@
 ### *Douane Temporelle: the checkpoint where history gets inspected*
 ## 👥 Team
 **Chaima Arfaoui grp A03 ** · **Farah Boukhatem A01 **
+> 📝 **Note on commits:** Farah Boukhatem's computer crashed during the project, so she continued working on Chaima's PC and GitHub account. That is why all commits appear under a single account. Both members contributed to the project.
 
 *FSEGT, 3ème BI, Programmation Mobile (Prof. Nidhal Jelassi)*
 
